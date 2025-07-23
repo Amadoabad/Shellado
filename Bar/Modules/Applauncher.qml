@@ -34,8 +34,7 @@ PanelWithOverlay {
         color: "transparent"
         visible: parent.visible
         property bool shouldBeVisible: false
-        anchors.top: parent.top
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.centerIn: parent
 
         function showAt() {
             appLauncherPanel.visible = true;
@@ -57,9 +56,10 @@ PanelWithOverlay {
             width: 460
             height: 640
             x: (parent.width - width) / 2
-            color: Theme.backgroundPrimary
-            bottomLeftRadius: 28
-            bottomRightRadius: 28
+            color: Theme.surface
+            radius: 20
+            border.color: Qt.rgba(Theme.outline.r, Theme.outline.g, Theme.outline.b, 0.5)
+            border.width: 1
 
             property var appModel: DesktopEntries.applications.values
             property var filteredApps: []
@@ -408,7 +408,7 @@ PanelWithOverlay {
             id: launcherCornerRight
             position: "bottomleft"
             size: 1.1
-            fillColor: Theme.backgroundPrimary
+            fillColor: Theme.surface
             anchors.top: root.top
             offsetX: 416
             offsetY: 0
@@ -418,7 +418,7 @@ PanelWithOverlay {
             id: launcherCornerLeft
             position: "bottomright"
             size: 1.1
-            fillColor: Theme.backgroundPrimary
+            fillColor: Theme.surface
             anchors.top: root.top
             offsetX: -416
             offsetY: 0

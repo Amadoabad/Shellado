@@ -35,18 +35,26 @@ Scope {
                     color: "transparent"
                     implicitHeight: barBackground.height
                     anchors.top: true
+                    margins.top: 3
                     anchors.left: true
                     anchors.right: true
+                    margins.left: 50
+                    margins.right: 50
 
                     visible: true
 
                     Rectangle {
                         id: barBackground
                         width: parent.width
-                        height: 36
-                        color: Theme.backgroundPrimary
+                        height: 17
+                        color: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.5)
                         anchors.top: parent.top
                         anchors.left: parent.left
+                        radius: 10
+                        border.color: Theme.accentPrimary
+                        border.width: Settings.settings.showBarBorder ? 1 : 0
+
+
                     }
 
                     Row {
@@ -133,7 +141,7 @@ Scope {
 
                     color: "transparent"
                     screen: modelData
-                    margins.top: 36
+                    margins.top: 0
                     WlrLayershell.exclusionMode: ExclusionMode.Ignore
                     visible: true
                     WlrLayershell.layer: WlrLayer.Background
@@ -158,7 +166,7 @@ Scope {
                     anchors.right: true
                     color: "transparent"
                     screen: modelData
-                    margins.top: 36
+                    margins.top: 0
                     WlrLayershell.exclusionMode: ExclusionMode.Ignore
                     visible: true
                     WlrLayershell.layer: WlrLayer.Background

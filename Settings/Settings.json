@@ -1,0 +1,23 @@
+{
+    "weatherCity": "Cairo",
+    "profileImage": "/home/amado/.face",
+    "useFahrenheit": false,
+    "wallpaperFolder": "/home/amado/amado/theming/bg/slideshow",
+    "currentWallpaper": "",
+    "videoPath": "~/Videos/",
+    "showActiveWindowIcon": false,
+    "showSystemInfoInBar": true,
+    "showMediaInBar": true,
+    "useSWWW": true,
+    "randomWallpaper": true,
+    "useWallpaperTheme": true,
+    "wallpaperInterval": 900,
+    "wallpaperResize": "crop",
+    "transitionFps": 60,
+    "transitionType": "simple",
+    "transitionDuration": 2.5,
+    "visualizerType": "radial",
+    "reverseDayMonth": false,
+    "use12HourClock": false,
+    "dimPanels": true
+}

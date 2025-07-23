@@ -17,7 +17,7 @@ PanelWindow {
     visible: !activeWindowWrapper.finallyHidden
     implicitHeight: activeWindowTitleContainer.height
     implicitWidth: 0
-    property int barHeight: 36
+    property int barHeight: 20
     color: "transparent"
 
             function getIcon() {
@@ -101,7 +101,7 @@ PanelWindow {
 
         Rectangle {
             id: activeWindowTitleContainer
-            color: Theme.backgroundPrimary
+            color: Qt.rgba(Theme.surface.r, Theme.surface.g, Theme.surface.b, 0.8)
             bottomLeftRadius: Math.max(0, width / 2)
             bottomRightRadius: Math.max(0, width / 2)
 
@@ -145,7 +145,7 @@ PanelWindow {
             id: activeCornerRight
             position: "bottomleft"
             size: 1.1
-            fillColor: Theme.backgroundPrimary
+            fillColor: Qt.rgba(Theme.surface.r, Theme.surface.g, Theme.surface.b, 0.8)
             offsetX: activeWindowTitleContainer.x + activeWindowTitleContainer.width - 34
             offsetY: -1
             anchors.top: activeWindowTitleContainer.top
@@ -155,7 +155,7 @@ PanelWindow {
             id: activeCornerLeft
             position: "bottomright"
             size: 1.1
-            fillColor: Theme.backgroundPrimary
+            fillColor: Qt.rgba(Theme.surface.r, Theme.surface.g, Theme.surface.b, 0.8)
             anchors.top: activeWindowTitleContainer.top
             x: activeWindowTitleContainer.x + 34 - width
             offsetY: -1

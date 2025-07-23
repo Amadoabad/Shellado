@@ -31,12 +31,23 @@ WlSessionLock {
         fetchWeatherData();
     }
 
+    Connections {
+        target: Settings.settings
+        function onWeatherCityChanged() {
+            lock.weatherCity = Settings.settings.weatherCity;
+            lock.fetchWeatherData();
+        }
+    }
+
     // Weather fetching function
     function fetchWeatherData() {
+        console.log("Fetching weather for city:", weatherCity);
         WeatherHelper.fetchCityWeather(weatherCity, function (result) {
+            console.log("Weather data received:", JSON.stringify(result.weather));
             weatherData = result.weather;
             weatherError = "";
         }, function (err) {
+            console.log("Weather fetch error:", err);
             weatherError = err;
         });
     }

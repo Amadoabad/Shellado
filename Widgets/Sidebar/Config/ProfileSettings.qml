@@ -307,6 +307,61 @@ Rectangle {
             }
         }
 
+        // Show Bar Border Setting
+        RowLayout {
+            spacing: 8
+            Layout.fillWidth: true
+            Layout.topMargin: 8
+
+            Text {
+                text: "Show Bar Border"
+                font.family: Theme.fontFamily
+                font.pixelSize: 13
+                font.bold: true
+                color: Theme.textPrimary
+                Layout.alignment: Qt.AlignVCenter
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
+
+            // Custom Material 3 Switch
+            Rectangle {
+                id: customSwitch4
+                width: 52
+                height: 32
+                radius: 16
+                color: Settings.settings.showBarBorder ? Theme.accentPrimary : Theme.surfaceVariant
+                border.color: Settings.settings.showBarBorder ? Theme.accentPrimary : Theme.outline
+                border.width: 2
+
+                Rectangle {
+                    id: thumb4
+                    width: 28
+                    height: 28
+                    radius: 14
+                    color: Theme.surface
+                    border.color: Theme.outline
+                    border.width: 1
+                    y: 2
+                    x: Settings.settings.showBarBorder ? customSwitch4.width - width - 2 : 2
+
+                    Behavior on x {
+                        NumberAnimation { duration: 200; easing.type: Easing.OutCubic }
+                    }
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        Settings.settings.showBarBorder = !Settings.settings.showBarBorder
+                    }
+                }
+            }
+        }
+
         // Dim Windows Setting
         RowLayout {
             spacing: 8

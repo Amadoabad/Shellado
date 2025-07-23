@@ -6,7 +6,7 @@ import qs.Services
 
 Singleton {
 
-    property string shellName: "Noctalia"
+    property string shellName: "quickshell"
     property string settingsDir: Quickshell.env("HOME") + "/.config/" + shellName + "/"
     property string settingsFile: settingsDir + "Settings.json"
     property var settings: settingAdapter
@@ -36,27 +36,28 @@ Singleton {
         }
         JsonAdapter {
             id: settingAdapter
-            property string weatherCity: "Dinslaken"
+            property string weatherCity: "Cairo"
             property string profileImage: Quickshell.env("HOME") + "/.face"
             property bool useFahrenheit: false
-            property string wallpaperFolder: "/usr/share/wallpapers"
+            property string wallpaperFolder: "/home/amado/amado/theming/bg/slideshow"
             property string currentWallpaper: ""
             property string videoPath: "~/Videos/"
             property bool showActiveWindowIcon: false
-            property bool showSystemInfoInBar: false
-            property bool showMediaInBar: false
-            property bool useSWWW: false
-            property bool randomWallpaper: false
-            property bool useWallpaperTheme: false
-            property int wallpaperInterval: 300
+            property bool showSystemInfoInBar: true
+            property bool showMediaInBar: true
+            property bool useSWWW: ture
+            property bool randomWallpaper: true
+            property bool useWallpaperTheme: true
+            property int wallpaperInterval: 900
             property string wallpaperResize: "crop"
             property int transitionFps: 60
-            property string transitionType: "random"
-            property real transitionDuration: 1.1
+            property string transitionType: "simple"
+            property real transitionDuration: 2.5
             property string visualizerType: "radial"
             property bool reverseDayMonth: false
             property bool use12HourClock: false
             property bool dimPanels: true
+            property bool showBarBorder: false
         }
     }
 
@@ -65,5 +66,6 @@ Singleton {
         function onRandomWallpaperChanged() { WallpaperManager.toggleRandomWallpaper() }
         function onWallpaperIntervalChanged() { WallpaperManager.restartRandomWallpaperTimer() }
         function onWallpaperFolderChanged() { WallpaperManager.loadWallpapers() }
+        function onWeatherCityChanged() { settingFileView.writeAdapter() }
     }
 }
