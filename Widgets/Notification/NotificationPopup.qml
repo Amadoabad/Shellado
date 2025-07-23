@@ -82,7 +82,7 @@ PanelWindow {
             delegate: Rectangle {
                 id: notificationDelegate
                 width: parent.width
-                color: Theme.backgroundPrimary
+                color: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.8) // Semi-transparent background
                 radius: 20
 
                 property bool appeared: model.appeared
@@ -120,7 +120,7 @@ PanelWindow {
                             anchors.margins: 4
                             fillMode: Image.PreserveAspectFit
                             smooth: true
-                            cache: false
+                            cache: true
                             asynchronous: true
                             sourceSize.width: 36
                             sourceSize.height: 36
@@ -194,6 +194,7 @@ PanelWindow {
                 }
 
                 Timer {
+                    id: dismissTimer
                     interval: 4000
                     running: !dismissed
                     repeat: false
@@ -206,6 +207,9 @@ PanelWindow {
 
                 MouseArea {
                     anchors.fill: parent
+                    hoverEnabled: true
+                    onEntered: dismissTimer.running = false
+                    onExited: dismissTimer.running = true
                     onClicked: {
                         dismissAnimation.start();
                         if (rawNotification)
@@ -218,12 +222,6 @@ PanelWindow {
                     NumberAnimation {
                         target: notificationDelegate
                         property: "opacity"
-                        to: 0
-                        duration: 150
-                    }
-                    NumberAnimation {
-                        target: notificationDelegate
-                        property: "height"
                         to: 0
                         duration: 150
                     }
@@ -254,12 +252,6 @@ PanelWindow {
                     }
                     NumberAnimation {
                         target: notificationDelegate
-                        property: "height"
-                        to: contentRow.height + 20
-                        duration: 150
-                    }
-                    NumberAnimation {
-                        target: notificationDelegate
                         property: "x"
                         to: 0
                         duration: 150
@@ -270,25 +262,8 @@ PanelWindow {
                 Component.onCompleted: {
                     if (!appeared) {
                         opacity = 0;
-                        height = 0;
                         x = width;
                         appearAnimation.start();
-                        for (let i = 0; i < notificationModel.count; i++) {
-                            if (notificationModel.get(i).id === notificationDelegate.id) {
-                                var oldItem = notificationModel.get(i);
-                                notificationModel.set(i, {
-                                    id: oldItem.id,
-                                    appName: oldItem.appName,
-                                    summary: oldItem.summary,
-                                    body: oldItem.body,
-                                    rawNotification: oldItem.rawNotification,
-                                    appeared: true,
-                                    read: oldItem.read,
-                                    dismissed: oldItem.dismissed
-                                });
-                                break;
-                            }
-                        }
                     }
                 }
             }

@@ -91,26 +91,35 @@ PanelWithOverlay {
         }
 
         function saveHistory() {
-            const historyArray = [];
-            const count = Math.min(historyModel.count, maxHistory);
-            for (let i = 0; i < count; ++i) {
-                let obj = historyModel.get(i);
-                if (typeof obj === 'object' && obj !== null) {
-                    historyArray.push({
-                        id: obj.id,
-                        appName: obj.appName,
-                        summary: obj.summary,
-                        body: obj.body,
-                        timestamp: obj.timestamp,
-                        read: obj.read === undefined ? false : obj.read
-                    });
+            // Debounce the save operation
+            saveTimer.restart();
+        }
+
+        Timer {
+            id: saveTimer
+            interval: 500 // 500ms debounce delay
+            running: false
+            repeat: false
+            onTriggered: {
+                const historyArray = [];
+                const count = Math.min(historyModel.count, maxHistory);
+                for (let i = 0; i < count; ++i) {
+                    let obj = historyModel.get(i);
+                    if (typeof obj === 'object' && obj !== null) {
+                        historyArray.push({
+                            id: obj.id,
+                            appName: obj.appName,
+                            summary: obj.summary,
+                            body: obj.body,
+                            timestamp: obj.timestamp,
+                            read: obj.read === undefined ? false : obj.read
+                        });
+                    }
                 }
-            }
-            historyAdapter.notifications = historyArray;
-            Qt.callLater(function () {
+                historyAdapter.notifications = historyArray;
                 historyFileView.writeAdapter();
-            });
-            updateHasUnread();
+                updateHasUnread();
+            }
         }
 
         function addToHistory(notification) {
