@@ -38,4 +38,6 @@ IpcHandler {
         }
         clipboard.toggle();
     }
+
+    
 }

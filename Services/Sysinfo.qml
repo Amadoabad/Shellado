@@ -23,7 +23,7 @@ Singleton {
         running: true
         repeat: true
         onTriggered: {
-            console.log("Sysinfo: Timer triggered, starting process.");
+            // console.log("Sysinfo: Timer triggered, starting process.");
             zigstatProcess.running = true;
         }
     }
@@ -32,24 +32,22 @@ Singleton {
         id: zigstatProcess
         running: false // Will be started by the timer
         command: [Quickshell.shellRoot + "/scripts/get_sysinfo.sh"]
-        onStarted: {
-            console.log("Sysinfo: get_sysinfo.sh process started.");
-        }
+        // console.log("Sysinfo: get_sysinfo.sh process started.");
         onExited: (exitCode, status) => {
-            console.log(`Sysinfo: get_sysinfo.sh process exited with code: ${exitCode}, status: ${status}`);
+            // console.log(`Sysinfo: get_sysinfo.sh process exited with code: ${exitCode}, status: ${status}`);
         }
         stdout: SplitParser {
             splitMarker: "\n"
             property var outputLines: []
             onRead: function (line) {
-                console.log("Sysinfo: Raw line read: " + line);
+                // console.log("Sysinfo: Raw line read: " + line);
                 outputLines.push(line);
                 if (outputLines.length === 3) {
                     // CPU Usage
                     const cpuLine = outputLines[0];
                     cpuUsage = parseFloat(cpuLine);
                     cpuUsageStr = cpuUsage.toFixed(0) + "%";
-                    console.log("Sysinfo: Parsed CPU Usage: " + cpuUsageStr);
+                    // console.log("Sysinfo: Parsed CPU Usage: " + cpuUsageStr);
 
                     // Memory Usage
                     const memLine = outputLines[1];
@@ -61,14 +59,14 @@ Singleton {
                         memoryUsagePer = (usedMem / totalMem) * 100;
                         memoryUsageStr = memoryUsage.toFixed(1) + "G";
                         memoryUsagePerStr = memoryUsagePer.toFixed(0) + "%";
-                        console.log(`Sysinfo: Parsed Memory Usage: ${memoryUsageStr} (${memoryUsagePerStr})`);
+                        // console.log(`Sysinfo: Parsed Memory Usage: ${memoryUsageStr} (${memoryUsagePerStr})`);
                     }
 
                     // CPU Temperature
                     const tempLine = outputLines[2];
                     cpuTemp = parseFloat(tempLine);
                     cpuTempStr = cpuTemp.toFixed(0) + "°C";
-                    console.log("Sysinfo: Parsed CPU Temp: " + cpuTempStr);
+                    // console.log("Sysinfo: Parsed CPU Temp: " + cpuTempStr);
 
                     outputLines = []; // Reset for next batch
                 }
