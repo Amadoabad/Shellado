@@ -153,7 +153,7 @@ Scope {
                         id: topLeftCorner
                         position: "bottomleft"
                         size: 1.3
-                        fillColor: (Theme.backgroundPrimary !== undefined && Theme.backgroundPrimary !== null) ? Theme.backgroundPrimary : "#222"
+                        fillColor: "#000"
                         offsetX: -39
                         offsetY: 0
                         anchors.top: parent.top
@@ -179,7 +179,7 @@ Scope {
                         id: topRightCorner
                         position: "bottomright"
                         size: 1.3
-                        fillColor: (Theme.backgroundPrimary !== undefined && Theme.backgroundPrimary !== null) ? Theme.backgroundPrimary : "#222"
+                        fillColor: "#000"
                         offsetX: 39
                         offsetY: 0
                         anchors.top: parent.top
@@ -208,7 +208,7 @@ Scope {
                         id: bottomLeftCorner
                         position: "topleft"
                         size: 1.3
-                        fillColor: Theme.backgroundPrimary
+                        fillColor: "#000"
                         offsetX: -39
                         offsetY: 0
                         anchors.top: parent.top
@@ -233,7 +233,7 @@ Scope {
                         id: bottomRightCorner
                         position: "topright"
                         size: 1.3
-                        fillColor: Theme.backgroundPrimary
+                        fillColor: "#000"
                         offsetX: 39
                         offsetY: 0
                         anchors.top: parent.top
