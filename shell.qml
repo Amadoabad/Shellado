@@ -84,7 +84,20 @@ Scope {
     }
 
     IPCHandlers {
-        shellRoot: root
+        id: ipcHandlers
+    }
+
+    Connections {
+        target: ipcHandlers
+        function onToggleLauncherRequested() {
+            if (appLauncherPanel.visible) {
+                appLauncherPanel.hidePanel();
+            } else {
+                appLauncherPanel.showAt();
+            }
+        }
+        function onToggleLockRequested() { lockScreen.locked = !lockScreen.locked }
+        function onToggleClipboardRequested() { clipboard.toggle() }
     }
 
     Connections {

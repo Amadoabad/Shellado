@@ -1,42 +1,30 @@
 import Quickshell
 import Quickshell.Io
+import Quickshell.Wayland
+import qs.Components
 
 IpcHandler {
-    property var shellRoot
-    
-
     target: "globalIPC"
+
+    signal toggleLauncherRequested()
+    signal toggleLockRequested()
+    signal toggleClipboardRequested()
 
     // Toggle Applauncher visibility
     function toggleLauncher(): void {
-        if (!shellRoot.appLauncherPanel) {
-            console.warn("AppLauncherIpcHandler: appLauncherPanel not set!");
-            return;
-        }
-        if (shellRoot.appLauncherPanel.visible) {
-            shellRoot.appLauncherPanel.hidePanel();
-        } else {
-            console.log("[IPC] Applauncher show() called");
-            shellRoot.appLauncherPanel.showAt();
-        }
+        console.log("[IPC] toggleLauncher called, emitting signal");
+        toggleLauncherRequested();
     }
 
     // Toggle LockScreen
     function toggleLock(): void {
-        if (!shellRoot.lockScreen) {
-            console.warn("LockScreenIpcHandler: lockScreen not set!");
-            return;
-        }
-        console.log("[IPC] LockScreen show() called");
-        shellRoot.lockScreen.locked = true;
+        console.log("[IPC] toggleLock called, emitting signal");
+        toggleLockRequested();
     }
 
     function toggleClipboard(): void {
-        if (!shellRoot.clipboard) {
-            console.warn("ClipboardIpcHandler: clipboard not set!");
-            return;
-        }
-        shellRoot.clipboard.toggle();
+        console.log("[IPC] toggleClipboard called, emitting signal");
+        toggleClipboardRequested();
     }
 
     
