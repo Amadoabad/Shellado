@@ -403,25 +403,5 @@ PanelWithOverlay {
                 }
             }
         }
-
-        Corners {
-            id: launcherCornerRight
-            position: "bottomleft"
-            size: 1.1
-            fillColor: Theme.surface
-            anchors.top: root.top
-            offsetX: 416
-            offsetY: 0
-        }
-
-        Corners {
-            id: launcherCornerLeft
-            position: "bottomright"
-            size: 1.1
-            fillColor: Theme.surface
-            anchors.top: root.top
-            offsetX: -416
-            offsetY: 0
-        }
     }
 }

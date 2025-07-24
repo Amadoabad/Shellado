@@ -6,8 +6,8 @@ import qs.Services
 
 Singleton {
 
-    property string shellName: "quickshell"
-    property string settingsDir: Quickshell.env("HOME") + "/.config/" + shellName + "/"
+    property string shellName: "quickshell/Ly-sec"
+    property string settingsDir: Quickshell.env("HOME") + "/.config/" + shellName + "/Settings/"
     property string settingsFile: settingsDir + "Settings.json"
     property var settings: settingAdapter
 
@@ -45,7 +45,7 @@ Singleton {
             property bool showActiveWindowIcon: false
             property bool showSystemInfoInBar: true
             property bool showMediaInBar: true
-            property bool useSWWW: ture
+            property bool useSWWW: true
             property bool randomWallpaper: true
             property bool useWallpaperTheme: true
             property int wallpaperInterval: 900

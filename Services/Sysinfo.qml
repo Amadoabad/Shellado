@@ -31,7 +31,7 @@ Singleton {
     Process {
         id: zigstatProcess
         running: false // Will be started by the timer
-        command: [Quickshell.shellRoot + "/scripts/get_sysinfo.sh"]
+        command: [Quickshell.shellDir + "/scripts/get_sysinfo.sh"]
         // console.log("Sysinfo: get_sysinfo.sh process started.");
         onExited: (exitCode, status) => {
             // console.log(`Sysinfo: get_sysinfo.sh process exited with code: ${exitCode}, status: ${status}`);

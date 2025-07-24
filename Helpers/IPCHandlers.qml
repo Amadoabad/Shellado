@@ -1,42 +1,42 @@
+import Quickshell
 import Quickshell.Io
 
 IpcHandler {
-    property var appLauncherPanel
-    property var lockScreen
-    property var clipboard
+    property var shellRoot
+    
 
     target: "globalIPC"
 
     // Toggle Applauncher visibility
     function toggleLauncher(): void {
-        if (!appLauncherPanel) {
+        if (!shellRoot.appLauncherPanel) {
             console.warn("AppLauncherIpcHandler: appLauncherPanel not set!");
             return;
         }
-        if (appLauncherPanel.visible) {
-            appLauncherPanel.hidePanel();
+        if (shellRoot.appLauncherPanel.visible) {
+            shellRoot.appLauncherPanel.hidePanel();
         } else {
             console.log("[IPC] Applauncher show() called");
-            appLauncherPanel.showAt();
+            shellRoot.appLauncherPanel.showAt();
         }
     }
 
     // Toggle LockScreen
     function toggleLock(): void {
-        if (!lockScreen) {
+        if (!shellRoot.lockScreen) {
             console.warn("LockScreenIpcHandler: lockScreen not set!");
             return;
         }
         console.log("[IPC] LockScreen show() called");
-        lockScreen.locked = true;
+        shellRoot.lockScreen.locked = true;
     }
 
     function toggleClipboard(): void {
-        if (!clipboard) {
+        if (!shellRoot.clipboard) {
             console.warn("ClipboardIpcHandler: clipboard not set!");
             return;
         }
-        clipboard.toggle();
+        shellRoot.clipboard.toggle();
     }
 
     

@@ -84,9 +84,7 @@ Scope {
     }
 
     IPCHandlers {
-        appLauncherPanel: appLauncherPanel
-        lockScreen: lockScreen
-        clipboard: clipboard
+        shellRoot: root
     }
 
     Connections {

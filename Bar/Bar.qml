@@ -144,7 +144,7 @@ Scope {
                     margins.top: 0
                     WlrLayershell.exclusionMode: ExclusionMode.Ignore
                     visible: true
-                    WlrLayershell.layer: WlrLayer.Background
+                    WlrLayershell.layer: WlrLayer.Top
                     aboveWindows: false
                     WlrLayershell.namespace: "swww-daemon"
                     implicitHeight: 24
@@ -169,7 +169,7 @@ Scope {
                     margins.top: 0
                     WlrLayershell.exclusionMode: ExclusionMode.Ignore
                     visible: true
-                    WlrLayershell.layer: WlrLayer.Background
+                    WlrLayershell.layer: WlrLayer.Top
                     aboveWindows: false
                     WlrLayershell.namespace: "swww-daemon"
 
@@ -186,6 +186,10 @@ Scope {
                     }
                 }
 
+                
+
+                
+
                 PanelWindow {
                     id: bottomLeftPanel
                     anchors.bottom: true
@@ -194,7 +198,7 @@ Scope {
                     screen: modelData
                     WlrLayershell.exclusionMode: ExclusionMode.Ignore
                     visible: true
-                    WlrLayershell.layer: WlrLayer.Background
+                    WlrLayershell.layer: WlrLayer.Top
                     aboveWindows: false
                     WlrLayershell.namespace: "swww-daemon"
 
@@ -219,7 +223,7 @@ Scope {
                     screen: modelData
                     WlrLayershell.exclusionMode: ExclusionMode.Ignore
                     visible: true
-                    WlrLayershell.layer: WlrLayer.Background
+                    WlrLayershell.layer: WlrLayer.Top
                     aboveWindows: false
                     WlrLayershell.namespace: "swww-daemon"
 
