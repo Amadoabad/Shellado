@@ -101,7 +101,7 @@ PanelWindow {
 
         Rectangle {
             id: activeWindowTitleContainer
-            color: Qt.rgba(Theme.surface.r, Theme.surface.g, Theme.surface.b, 0.8)
+            color: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.5)
             bottomLeftRadius: Math.max(0, width / 2)
             bottomRightRadius: Math.max(0, width / 2)
 
@@ -145,7 +145,7 @@ PanelWindow {
             id: activeCornerRight
             position: "bottomleft"
             size: 1.1
-            fillColor: Qt.rgba(Theme.surface.r, Theme.surface.g, Theme.surface.b, 0.8)
+            fillColor: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.5)
             offsetX: activeWindowTitleContainer.x + activeWindowTitleContainer.width - 34
             offsetY: -1
             anchors.top: activeWindowTitleContainer.top
@@ -155,7 +155,7 @@ PanelWindow {
             id: activeCornerLeft
             position: "bottomright"
             size: 1.1
-            fillColor: Qt.rgba(Theme.surface.r, Theme.surface.g, Theme.surface.b, 0.8)
+            fillColor: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.5)
             anchors.top: activeWindowTitleContainer.top
             x: activeWindowTitleContainer.x + 34 - width
             offsetY: -1
