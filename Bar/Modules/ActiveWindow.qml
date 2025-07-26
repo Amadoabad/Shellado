@@ -146,7 +146,7 @@ PanelWindow {
             position: "bottomleft"
             size: 1.1
             fillColor: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.5)
-            offsetX: activeWindowTitleContainer.x + activeWindowTitleContainer.width - 34
+            offsetX: activeWindowTitleContainer.x + activeWindowTitleContainer.width - 32.6
             offsetY: -1
             anchors.top: activeWindowTitleContainer.top
         }
@@ -157,7 +157,7 @@ PanelWindow {
             size: 1.1
             fillColor: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.5)
             anchors.top: activeWindowTitleContainer.top
-            x: activeWindowTitleContainer.x + 34 - width
+            x: activeWindowTitleContainer.x + 32.5 - width
             offsetY: -1
         }
     }
