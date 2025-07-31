@@ -46,11 +46,11 @@ Scope {
                     Rectangle {
                         id: barBackground
                         width: parent.width
-                        height: 17
+                        height: 15
                         color: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.5)
                         anchors.top: parent.top
                         anchors.left: parent.left
-                        radius: 10
+                        radius: 7
                         border.color: Theme.accentPrimary
                         border.width: Settings.settings.showBarBorder ? 1 : 0
 

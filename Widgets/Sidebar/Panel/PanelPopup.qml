@@ -273,6 +273,10 @@ PanelWithOverlay {
                             }
                         }
                     }
+                    EyeComfort {
+                        Layout.alignment: Qt.AlignLeft
+                        Layout.preferredHeight: 80
+                    }
                 }
 
                 // Hidden panel components for modal functionality

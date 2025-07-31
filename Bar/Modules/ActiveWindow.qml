@@ -17,7 +17,7 @@ PanelWindow {
     visible: !activeWindowWrapper.finallyHidden
     implicitHeight: activeWindowTitleContainer.height
     implicitWidth: 0
-    property int barHeight: 20
+    property int barHeight: 18
     color: "transparent"
 
             function getIcon() {
