@@ -95,6 +95,10 @@ Scope {
                             anchors.verticalCenter: parent.verticalCenter
                         }
 
+                        Battery {
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+
                         Volume {
                             id: widgetsVolume
                             shell: rootScope.shell
