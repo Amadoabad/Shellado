@@ -353,7 +353,7 @@ PanelWithOverlay {
                                                 }
                                             }
                                             Text {
-                                                text: model.summary || (model.isPlaceholder ? "You're all caught up!" : "")
+                                                text: model.summary || ""
                                                 color: Theme.textSecondary
                                                 font.family: Theme.fontFamily
                                                 font.pixelSize: Theme.fontSizeBody
@@ -361,7 +361,7 @@ PanelWithOverlay {
                                                 wrapMode: Text.Wrap
                                             }
                                             Text {
-                                                text: model.body || (model.isPlaceholder ? "No notifications to show." : "")
+                                                text: model.body || ""
                                                 color: Theme.textDisabled
                                                 font.family: Theme.fontFamily
                                                 font.pixelSize: Theme.fontSizeBody

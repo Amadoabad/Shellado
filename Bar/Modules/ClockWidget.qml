@@ -12,7 +12,7 @@ Rectangle {
 
     Text {
         id: textItem
-        text: Time.time
+        text: Time.time || ""
         font.family: Theme.fontFamily
         font.weight: Font.Bold
         font.pixelSize: Theme.fontSizeSmall

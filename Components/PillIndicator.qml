@@ -44,7 +44,7 @@ Item {
         Text {
             id: textItem
             anchors.centerIn: parent
-            text: revealPill.text
+            text: revealPill.text || ""
             font.pixelSize: Theme.fontSizeSmall
             font.family: Theme.fontFamily
             font.weight: Font.Bold

@@ -95,7 +95,7 @@ Rectangle {
     Text {
         id: centerText
         anchors.centerIn: parent
-        text: circularProgressBar.text
+        text: circularProgressBar.text || ""
         font.pixelSize: textSize
         font.family: Theme.fontFamily
         font.bold: true
@@ -111,7 +111,7 @@ Rectangle {
         anchors.right: parent.right
         anchors.rightMargin: -4
         anchors.verticalCenter: parent.verticalCenter
-        text: notchIcon
+        text: notchIcon || ""
         font.family: "Material Symbols Outlined"
         font.pixelSize: notchIconSize
         color: notchIconColor

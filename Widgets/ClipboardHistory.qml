@@ -290,8 +290,8 @@ PanelWithOverlay {
                         spacing: 8
 
                         delegate: Rectangle {
-                            property string entryType: root.getEntryType(model.entry)
-                            property string entryPreview: root.getEntryPreview(model.entry)
+                            property string entryType: root.getEntryType(model.entry || '')
+                            property string entryPreview: root.getEntryPreview(model.entry || '')
                             property int entryIndex: index + 1
                             property bool isSelected: index === root.selectedIndex
 

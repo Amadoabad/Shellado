@@ -131,7 +131,7 @@ Rectangle {
                     spacing: 4
 
                     Text {
-                        text: MusicManager.trackTitle
+                        text: MusicManager.trackTitle || ""
                         color: Theme.textPrimary
                         font.family: Theme.fontFamily
                         font.pixelSize: Theme.fontSizeSmall
@@ -143,7 +143,7 @@ Rectangle {
                     }
 
                     Text {
-                        text: MusicManager.trackArtist
+                        text: MusicManager.trackArtist || ""
                         color: Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.8)
                         font.family: Theme.fontFamily
                         font.pixelSize: Theme.fontSizeCaption
@@ -152,7 +152,7 @@ Rectangle {
                     }
 
                     Text {
-                        text: MusicManager.trackAlbum
+                        text: MusicManager.trackAlbum || ""
                         color: Qt.rgba(Theme.textPrimary.r, Theme.textPrimary.g, Theme.textPrimary.b, 0.6)
                         font.family: Theme.fontFamily
                         font.pixelSize: Theme.fontSizeCaption

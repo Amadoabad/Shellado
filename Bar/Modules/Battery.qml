@@ -41,7 +41,7 @@ Item {
         id: icon
         anchors.left: parent.left
         anchors.verticalCenter: parent.verticalCenter
-        text: batteryIcon()
+        text: batteryIcon() || ""
         font.family: "Material Symbols Outlined"
         font.pixelSize: 16
         color: charging ? Theme.accentPrimary : Theme.textPrimary
@@ -54,7 +54,7 @@ Item {
         anchors.left: icon.right
         anchors.leftMargin: 6 // Manual spacing
         anchors.verticalCenter: parent.verticalCenter
-        text: Math.round(percent) + "%"
+        text: (Math.round(percent) || 0) + "%"
         font.pixelSize: Theme.fontSizeSmall
         font.family: Theme.fontFamily
         color: Theme.textPrimary
@@ -76,15 +76,14 @@ Item {
     StyledTooltip {
         id: batteryTooltip
         text: {
+            if (!batteryWidget.isReady) return "";
             let lines = [];
-            if (batteryWidget.isReady) {
-                lines.push(batteryWidget.charging ? "Charging" : "Discharging");
-                lines.push(Math.round(batteryWidget.percent) + "%");
-                if (batteryWidget.battery.timeToEmpty > 0)
-                    lines.push("Time left: " + Math.floor(batteryWidget.battery.timeToEmpty / 60) + " min");
-                if (batteryWidget.battery.timeToFull > 0)
-                    lines.push("Time to full: " + Math.floor(batteryWidget.battery.timeToFull / 60) + " min");
-            }
+            lines.push(batteryWidget.charging ? "Charging" : "Discharging");
+            lines.push((Math.round(batteryWidget.percent) || 0) + "%ிகளில்");
+            if (batteryWidget.battery.timeToEmpty > 0)
+                lines.push("Time left: " + (Math.floor(batteryWidget.battery.timeToEmpty / 60) || 0) + " min");
+            if (batteryWidget.battery.timeToFull > 0)
+                lines.push("Time to full: " + (Math.floor(batteryWidget.battery.timeToFull / 60) || 0) + " min");
             return lines.join("\n");
         }
         tooltipVisible: batteryWidget.containsMouse

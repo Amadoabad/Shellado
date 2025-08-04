@@ -233,14 +233,14 @@ Item {
                                         }
                                         Text {
                                             Layout.fillWidth: true
-                                            text: modelData.address
+                                            text: modelData.address || ""
                                             font.family: Theme.fontFamily
                                             color: modelData.connected ? Theme.accentPrimary : Theme.textSecondary
                                             font.pixelSize: 11
                                             elide: Text.ElideRight
                                         }
                                         Text {
-                                            text: "Paired: " + modelData.paired + " | Trusted: " + modelData.trusted
+                                            text: "Paired: " + (modelData.paired || false) + " | Trusted: " + (modelData.trusted || false)
                                             font.family: Theme.fontFamily
                                             font.pixelSize: 10
                                             color: Theme.textSecondary

@@ -67,7 +67,7 @@ Rectangle {
                     anchors.rightMargin: 12
                     anchors.topMargin: 6
                     anchors.bottomMargin: 6
-                    text: Settings.settings.weatherCity
+                    text: Settings.settings.weatherCity || ""
                     font.family: Theme.fontFamily
                     font.pixelSize: 13
                     color: Theme.textPrimary

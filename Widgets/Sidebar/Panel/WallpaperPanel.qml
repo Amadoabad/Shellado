@@ -133,7 +133,7 @@ PanelWindow {
                                 Image {
                                     id: wallpaperImage
                                     anchors.fill: parent
-                                    source: modelData
+                                    source: modelData || ""
                                     fillMode: Image.PreserveAspectCrop
                                     asynchronous: true
                                     cache: true

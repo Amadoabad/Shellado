@@ -99,7 +99,7 @@ Rectangle {
                     }
 
                     Text {
-                        text: isRecording ? "End" : "Record"
+                        text: (isRecording ? "End" : "Record") || ""
                         font.family: Theme.fontFamily
                         font.pixelSize: 14
                         font.bold: true
@@ -146,7 +146,7 @@ Rectangle {
                     }
 
                     Text {
-                        text: "Wallpaper"
+                        text: "Wallpaper" || ""
                         font.family: Theme.fontFamily
                         font.pixelSize: 14
                         font.bold: true

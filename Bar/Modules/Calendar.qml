@@ -67,7 +67,7 @@ PanelWithOverlay {
                 Layout.leftMargin: 8  // Align with grid
                 Layout.rightMargin: 8
                 delegate: Text {
-                    text: shortName
+                    text: shortName || ""
                     color: Theme.textPrimary
                     opacity: 0.8
                     font.pixelSize: 13
@@ -101,7 +101,7 @@ PanelWithOverlay {
 
                     Text {
                         anchors.centerIn: parent
-                        text: model.day
+                        text: model.day ? String(model.day) : ""
                         color: model.today ? Theme.onAccent : Theme.textPrimary
                         opacity: model.month === calendar.month ? (mouseArea2.containsMouse ? 1.0 : 0.7) : 0.3
                         font.pixelSize: 13

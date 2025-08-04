@@ -327,7 +327,7 @@ PanelWithOverlay {
                                     Layout.fillWidth: true
                                     spacing: 1
                                     Text {
-                                        text: modelData.name
+                                        text: modelData.name || ""
                                         color: hovered || isSelected ? Theme.onAccent : Theme.textPrimary
                                         font.family: Theme.fontFamily
                                         font.pixelSize: Theme.fontSizeSmall
@@ -337,7 +337,7 @@ PanelWithOverlay {
                                         Layout.fillWidth: true
                                     }
                                     Text {
-                                        text: modelData.isCalculator ? (modelData.expr + " = " + modelData.result) : (modelData.comment || modelData.genericName || "No description available")
+                                        text: modelData.isCalculator ? ((modelData.expr || "") + " = " + (modelData.result || "")) : (modelData.comment || modelData.genericName || "No description available")
                                         color: hovered || isSelected ? Theme.onAccent : Theme.textSecondary
                                         font.family: Theme.fontFamily
                                         font.pixelSize: Theme.fontSizeCaption

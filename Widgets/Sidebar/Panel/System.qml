@@ -54,7 +54,7 @@ Rectangle {
                         source: Image {
                             id: avatarImage
                             anchors.fill: parent
-                            source: Settings.settings.profileImage !== undefined ? Settings.settings.profileImage : ""
+                            source: Settings.settings.profileImage
                             fillMode: Image.PreserveAspectCrop
                             asynchronous: true
                             cache: false
@@ -67,7 +67,7 @@ Rectangle {
                             radius: 22
                             visible: false
                         }
-                        visible: Settings.settings.profileImage !== undefined && Settings.settings.profileImage !== ""
+                        visible: Settings.settings.profileImage !== ""
                         z: 1
                     }
 
@@ -89,7 +89,7 @@ Rectangle {
                     Layout.fillWidth: true
 
                     Text {
-                        text: Quickshell.env("USER")
+                        text: Quickshell.env("USER") || ""
                         font.family: Theme.fontFamily
                         font.pixelSize: 16
                         font.bold: true
@@ -97,7 +97,7 @@ Rectangle {
                     }
 
                     Text {
-                        text: "System Uptime: " + uptimeText
+                        text: "System Uptime: " + (uptimeText || "")
                         font.family: Theme.fontFamily
                         font.pixelSize: 12
                         color: Theme.textSecondary

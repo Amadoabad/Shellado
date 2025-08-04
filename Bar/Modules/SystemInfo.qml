@@ -27,7 +27,7 @@ Row {
             font.family: Theme.fontFamily
             font.pixelSize: Theme.fontSizeSmall
             color: Theme.textPrimary
-            text: Sysinfo.cpuUsageStr
+            text: Sysinfo.cpuUsageStr || ""
             anchors.verticalCenter: parent.verticalCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -50,7 +50,7 @@ Row {
             font.family: Theme.fontFamily
             font.pixelSize: Theme.fontSizeSmall
             color: Theme.textPrimary
-            text: Sysinfo.cpuTempStr
+            text: Sysinfo.cpuTempStr || ""
             anchors.verticalCenter: parent.verticalCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -73,7 +73,7 @@ Row {
             font.family: Theme.fontFamily
             font.pixelSize: Theme.fontSizeSmall
             color: Theme.textPrimary
-            text: Sysinfo.memoryUsagePerStr
+            text: Sysinfo.memoryUsagePerStr || ""
             anchors.verticalCenter: parent.verticalCenter
             verticalAlignment: Text.AlignVCenter
         }

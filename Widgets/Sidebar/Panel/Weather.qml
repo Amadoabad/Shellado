@@ -80,14 +80,14 @@ Rectangle {
                         RowLayout {
                             spacing: 4
                             Text {
-                                text: city
+                                text: city || ""
                                 font.family: Theme.fontFamily
                                 font.pixelSize: 14
                                 font.bold: true
                                 color: Theme.textPrimary
                             }
                             Text {
-                                text: weatherData && weatherData.timezone_abbreviation ? `(${weatherData.timezone_abbreviation})` : ""
+                                text: (weatherData && weatherData.timezone_abbreviation) ? `(${weatherData.timezone_abbreviation})` : ""
                                 font.family: Theme.fontFamily
                                 font.pixelSize: 10
                                 color: Theme.textSecondary
@@ -95,7 +95,7 @@ Rectangle {
                             }
                         }
                         Text {
-                            text: weatherData && weatherData.current_weather ? ((Settings.settings.useFahrenheit !== undefined ? Settings.settings.useFahrenheit : false) ? `${Math.round(weatherData.current_weather.temperature * 9/5 + 32)}°F` : `${Math.round(weatherData.current_weather.temperature)}°C`) : ((Settings.settings.useFahrenheit !== undefined ? Settings.settings.useFahrenheit : false) ? "--°F" : "--°C")
+                            text: (weatherData && weatherData.current_weather) ? ((Settings.settings.useFahrenheit ? `${Math.round(weatherData.current_weather.temperature * 9/5 + 32)}°F` : `${Math.round(weatherData.current_weather.temperature)}°C`)) : (Settings.settings.useFahrenheit ? "--°F" : "--°C")
                             font.family: Theme.fontFamily
                             font.pixelSize: 24
                             font.bold: true
@@ -133,7 +133,7 @@ Rectangle {
                         Layout.alignment: Qt.AlignHCenter
                         Text {
                             // Day of the week (e.g., Mon)
-                            text: Qt.formatDateTime(new Date(weatherData.daily.time[index]), "ddd")
+                            text: Qt.formatDateTime(new Date(weatherData.daily.time[index]), "ddd") || ""
                             font.family: Theme.fontFamily
                             font.pixelSize: 12
                             color: Theme.textSecondary
@@ -142,7 +142,7 @@ Rectangle {
                         }
                         Text {
                             // Material Symbol icon
-                            text: materialSymbolForCode(weatherData.daily.weathercode[index])
+                            text: materialSymbolForCode(weatherData.daily.weathercode[index]) || ""
                             font.family: "Material Symbols Outlined"
                             font.pixelSize: 22
                             color: Theme.accentPrimary
@@ -151,7 +151,7 @@ Rectangle {
                         }
                         Text {
                             // High/low temp
-                            text: weatherData && weatherData.daily ? ((Settings.settings.useFahrenheit !== undefined ? Settings.settings.useFahrenheit : false) ? `${Math.round(weatherData.daily.temperature_2m_max[index] * 9/5 + 32)}° / ${Math.round(weatherData.daily.temperature_2m_min[index] * 9/5 + 32)}°` : `${Math.round(weatherData.daily.temperature_2m_max[index])}° / ${Math.round(weatherData.daily.temperature_2m_min[index])}°`) : ((Settings.settings.useFahrenheit !== undefined ? Settings.settings.useFahrenheit : false) ? "--° / --°" : "--° / --°")
+                            text: (weatherData && weatherData.daily) ? ((Settings.settings.useFahrenheit ? `${Math.round(weatherData.daily.temperature_2m_max[index] * 9/5 + 32)}° / ${Math.round(weatherData.daily.temperature_2m_min[index] * 9/5 + 32)}°` : `${Math.round(weatherData.daily.temperature_2m_max[index])}° / ${Math.round(weatherData.daily.temperature_2m_min[index])}°`)) : (Settings.settings.useFahrenheit ? "--° / --°" : "--° / --°")
                             font.family: Theme.fontFamily
                             font.pixelSize: 12
                             color: Theme.textPrimary
@@ -164,7 +164,7 @@ Rectangle {
 
             // Error message
             Text {
-                text: errorString
+                text: errorString || ""
                 color: Theme.error
                 visible: errorString !== ""
                 font.family: Theme.fontFamily

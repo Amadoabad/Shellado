@@ -114,7 +114,7 @@ Item {
 
         // Track info
         Text {
-            text: MusicManager.trackTitle + " - " + MusicManager.trackArtist
+            text: (MusicManager.trackTitle || "") + " - " + (MusicManager.trackArtist || "")
             color: Theme.textPrimary
             font.family: Theme.fontFamily
             font.pixelSize: 12

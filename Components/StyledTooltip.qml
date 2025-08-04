@@ -65,7 +65,7 @@ Window {
     }
     Text {
         id: tooltipText
-        text: tooltipWindow.text
+        text: tooltipWindow.text || ""
         color: Theme.textPrimary
         font.family: Theme.fontFamily
         font.pixelSize: Theme.fontSizeSmall
