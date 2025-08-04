@@ -15,7 +15,7 @@ Item {
         Text {
             anchors.centerIn: parent
             text: notificationHistoryWin.hasUnread ? "notifications_unread" : "notifications"
-            font.family: mouseAreaBell.containsMouse ? "Material Symbols Rounded" : "Material Symbols Outlined"
+            font.family: mouseAreaBell.containsMouse ? "Material Symbols Outlined" : "Material Symbols Outlined"
             font.pixelSize: 16
             font.weight: notificationHistoryWin.hasUnread ? Font.Bold : Font.Normal
             color: mouseAreaBell.containsMouse ? Theme.accentPrimary : (notificationHistoryWin.hasUnread ? Theme.accentPrimary : Theme.textDisabled)

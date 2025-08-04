@@ -101,7 +101,6 @@ Singleton {
     property color overlay: applyOpacity(themeData.overlay, "66")
 
     // Font Properties
-    property string fontFamily: "Roboto"         // Family for all text
 
     property int fontSizeHeader: 32              // Headers and titles
     property int fontSizeBody: 16                // Body text and general content

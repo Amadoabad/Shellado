@@ -70,7 +70,7 @@ PanelWindow {
                         Text {
                             anchors.centerIn: parent
                             text: "close"
-                            font.family: closeButtonArea.containsMouse ? "Material Symbols Rounded" : "Material Symbols Outlined"
+                            font.family: closeButtonArea.containsMouse ? "Material Symbols Outlined" : "Material Symbols Outlined"
                             font.pixelSize: 20
                             color: closeButtonArea.containsMouse ? Theme.onAccent : Theme.accentPrimary
                         }
