@@ -44,7 +44,7 @@ Item {
     Text {
         id: iconText
         text: "dashboard"
-        font.family: isActive ? "Material Symbols Rounded" : "Material Symbols Outlined"
+        font.family: isActive ? "Material Symbols Outlined" : "Material Symbols Outlined"
         font.pixelSize: 16
         color: sidebarPopup.visible ? Theme.accentPrimary : Theme.textPrimary
         anchors.centerIn: parent

@@ -420,7 +420,7 @@ PanelWithOverlay {
                         Text {
                             anchors.horizontalCenter: parent.horizontalCenter
                             text: "content_paste_off"
-                            font.family: "Material Icons"
+                            font.family: "Material Symbols Outlined"
                             font.pixelSize: 48
                             color: Theme.textDisabled
                         }
@@ -490,7 +490,7 @@ PanelWithOverlay {
                     Text {
                         anchors.horizontalCenter: parent.horizontalCenter
                         text: "warning"
-                        font.family: "Material Icons"
+                        font.family: "Material Symbols Outlined"
                         font.pixelSize: 32
                         color: Theme.error
                     }
