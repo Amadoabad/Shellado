@@ -1,28 +1,28 @@
 {
-  "backgroundPrimary": "#0E0C14",
-  "backgroundSecondary": "#1A1820",
-  "backgroundTertiary": "#26242C",
+  "backgroundPrimary": "#121213",
+  "backgroundSecondary": "#1E1E1F",
+  "backgroundTertiary": "#2A2A2B",
   
-  "surface": "#211F27",
-  "surfaceVariant": "#323037",
+  "surface": "#252526",
+  "surfaceVariant": "#363636",
   
-  "textPrimary": "#FFF4FF",
-  "textSecondary": "#E6DCE6",
-  "textDisabled": "#999299",
+  "textPrimary": "#F4ECD5",
+  "textSecondary": "#DCD4C0",
+  "textDisabled": "#928E80",
   
-  "accentPrimary": "#A58CFE",
-  "accentSecondary": "#B7A3FE",
-  "accentTertiary": "#8470CB",
+  "accentPrimary": "#8A7371",
+  "accentSecondary": "#A18F8D",
+  "accentTertiary": "#6E5C5A",
   
-  "error": "#FDBDF3",
-  "warning": "#FECCF6",
+  "error": "#9C8582",
+  "warning": "#B2A09E",
   
-  "highlight": "#C9BAFE",
-  "rippleEffect": "#AE98FE",
+  "highlight": "#B9ABAA",
+  "rippleEffect": "#96817F",
   
-  "onAccent": "#0E0C14",
-  "outline": "#56555A",
+  "onAccent": "#121213",
+  "outline": "#59595A",
   
-  "shadow": "#0E0C14",
-  "overlay": "#0E0C14"
+  "shadow": "#121213",
+  "overlay": "#121213"
 }

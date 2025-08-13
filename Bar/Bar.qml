@@ -47,10 +47,10 @@ Scope {
                         id: barBackground
                         width: parent.width
                         height: 15
-                        color: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.5)
+                        color: Qt.rgba(Theme.backgroundPrimary.r, Theme.backgroundPrimary.g, Theme.backgroundPrimary.b, 0.75)
                         anchors.top: parent.top
                         anchors.left: parent.left
-                        radius: 7
+                        radius: 8
                         border.color: Theme.accentPrimary
                         border.width: Settings.settings.showBarBorder ? 1 : 0
 
@@ -62,7 +62,7 @@ Scope {
                         anchors.verticalCenter: barBackground.verticalCenter
                         anchors.left: barBackground.left
                         anchors.leftMargin: 18
-                        spacing: 12
+                        spacing: 10
 
                         SystemInfo {
                             anchors.verticalCenter: parent.verticalCenter
@@ -89,7 +89,7 @@ Scope {
                         anchors.verticalCenter: barBackground.verticalCenter
                         anchors.right: barBackground.right
                         anchors.rightMargin: 18
-                        spacing: 12
+                        spacing: 5
 
                         NotificationIcon {
                             anchors.verticalCenter: parent.verticalCenter
