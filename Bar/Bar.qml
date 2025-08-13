@@ -13,7 +13,6 @@ import qs.Widgets.Sidebar
 import qs.Widgets.Sidebar.Panel
 import qs.Helpers
 import QtQuick.Controls
-import qs.Widgets.Notification
 
 Scope {
     id: rootScope
@@ -90,10 +89,6 @@ Scope {
                         anchors.right: barBackground.right
                         anchors.rightMargin: 18
                         spacing: 5
-
-                        NotificationIcon {
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
 
                         Battery {
                             anchors.verticalCenter: parent.verticalCenter

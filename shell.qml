@@ -1,13 +1,11 @@
 import Quickshell
 import Quickshell.Io
 import Quickshell.Services.Pipewire
-import Quickshell.Services.Notifications
 import QtQuick
 import QtCore
 import qs.Bar
 import qs.Bar.Modules
 import qs.Widgets
-import qs.Widgets.Notification
 import qs.Settings
 import qs.Helpers
 
@@ -15,7 +13,6 @@ Scope {
     id: root
 
     property alias appLauncherPanel: appLauncherPanel
-    property var notificationHistoryWin: notificationHistoryWin
 
     function updateVolume(vol) {
         volume = vol;
@@ -31,7 +28,6 @@ Scope {
     Bar {
         id: bar
         shell: root
-        property var notificationHistoryWin: notificationHistoryWin
     }
 
     Applauncher {
@@ -46,34 +42,6 @@ Scope {
 
     LockScreen {
         id: lockScreen
-    }
-
-    NotificationServer {
-        id: notificationServer
-        onNotification: function (notification) {
-            console.log("Notification received:", notification.appName);
-            notification.tracked = true;
-            notificationPopup.addNotification(notification);
-            if (notificationHistoryWin) {
-                notificationHistoryWin.addToHistory({
-                    id: notification.id,
-                    appName: notification.appName || "Notification",
-                    summary: notification.summary || "",
-                    body: notification.body || "",
-                    timestamp: Date.now()
-                });
-            }
-        }
-    }
-
-    NotificationPopup {
-        id: notificationPopup
-        barVisible: bar.visible
-    }
-
-    // Notification History Window
-    NotificationHistory {
-        id: notificationHistoryWin
     }
 
     property var defaultAudioSink: Pipewire.defaultAudioSink
