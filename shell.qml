@@ -25,6 +25,12 @@ Scope {
         Quickshell.shell = root;
     }
 
+    // Initialize swaync service
+    Loader {
+        id: swayncService
+        source: "Services/SwayncService/Service.qml"
+    }
+
     Bar {
         id: bar
         shell: root
