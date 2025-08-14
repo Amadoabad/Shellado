@@ -121,6 +121,8 @@ Scope {
                             id: sidebarPopup
                         }
 
+                        SwayncButton {}
+
                         Button {
                             barBackground: barBackground
                             anchors.verticalCenter: parent.verticalCenter

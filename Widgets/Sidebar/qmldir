@@ -1,0 +1,3 @@
+module qs.Widgets.Sidebar
+Button Button.qml
+Panel Panel

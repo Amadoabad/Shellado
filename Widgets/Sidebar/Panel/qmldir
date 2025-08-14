@@ -1,0 +1,12 @@
+module qs.Widgets.Sidebar.Panel
+BluetoothPanel BluetoothPanel.qml
+EyeComfort EyeComfort.qml
+Music Music.qml
+PanelPopup PanelPopup.qml
+PowerProfile PowerProfile.qml
+QuickAccess QuickAccess.qml
+System System.qml
+SystemMonitor SystemMonitor.qml
+WallpaperPanel WallpaperPanel.qml
+Weather Weather.qml
+WifiPanel WifiPanel.qml
