@@ -9,6 +9,7 @@ MouseArea {
     property bool enabled: true
     property bool hovering: false
     property real size: 32
+    property real iconPixelSize: 24 // Default icon size
     cursorShape: Qt.PointingHandCursor
     implicitWidth: size
     implicitHeight: size
@@ -27,7 +28,7 @@ MouseArea {
         anchors.centerIn: parent
         text: root.icon
         font.family: "Material Symbols Outlined"
-        font.pixelSize: 24
+        font.pixelSize: root.iconPixelSize
         color: root.hovering ? Theme.onAccent : Theme.textPrimary
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
