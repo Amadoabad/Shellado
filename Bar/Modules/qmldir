@@ -13,7 +13,7 @@ Media Media.qml
 Swaync Swaync.qml
 SystemInfo SystemInfo.qml
 SystemTray SystemTray.qml
-Time Time.qml
+singleton Time Time.qml
 Volume Volume.qml
 Workspace Workspace.qml
 Terminal Terminal.qml
