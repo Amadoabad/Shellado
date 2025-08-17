@@ -37,8 +37,8 @@ Scope {
                     margins.top: 3
                     anchors.left: true
                     anchors.right: true
-                    margins.left: 50
-                    margins.right: 50
+                    margins.left: 15
+                    margins.right: 15
 
                     visible: true
 
