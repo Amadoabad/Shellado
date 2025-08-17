@@ -60,7 +60,7 @@ Item {
         color: Theme.textPrimary
         
         // This will now work correctly with manual anchoring
-        visible: !charging
+        visible: charging || percent < 95
     }
 
     property bool containsMouse: false
