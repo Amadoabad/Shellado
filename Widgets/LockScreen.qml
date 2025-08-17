@@ -10,6 +10,7 @@ import Quickshell.Io
 import qs.Settings
 import qs.Services
 import "../Helpers/Weather.js" as WeatherHelper
+import qs.Components
 
 WlSessionLock {
     id: lock
@@ -138,6 +139,9 @@ WlSessionLock {
 
     // Lock surface
     WlSessionLockSurface {
+      
+      color: "transparent"
+
         // Blurred wallpaper background
         Image {
             id: lockBgImage
@@ -487,5 +491,42 @@ WlSessionLock {
                 }
             }
         }
+        
+        Corners {
+            position: "bottomleft"
+            size: 1.3
+            fillColor: "#000"
+            offsetX: -39
+            offsetY: 0
+            anchors.top: parent.top
+        }
+
+        Corners {
+            position: "bottomright"
+            size: 1.3
+            fillColor: "#000"
+            offsetX: 39
+            offsetY: 0
+            anchors.top: parent.top
+        }
+
+        Corners {
+            position: "topleft"
+            size: 1.3
+            fillColor: "#000"
+            offsetX: -39
+            offsetY: 0
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: -52
+        }
+        Corners {
+            position: "topright"
+            size: 1.3
+            fillColor: "#000"
+            offsetX: 39
+            offsetY: 0
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: -52
+          }
     }
 }
