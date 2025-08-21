@@ -6,7 +6,7 @@ import qs.Services
 
 Singleton {
 
-    property string shellName: "quickshell/Ly-sec"
+    property string shellName: "quickshell/Shellado"
     property string settingsDir: Quickshell.env("HOME") + "/.config/" + shellName + "/Settings/"
     property string settingsFile: settingsDir + "Settings.json"
     property var settings: settingAdapter

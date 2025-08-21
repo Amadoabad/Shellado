@@ -171,7 +171,7 @@ WlSessionLock {
                 height: 80
                 radius: 40
                 color: Theme.accentPrimary
-
+                border.width: 1
                 Image {
                     id: avatarImage
                     anchors.fill: parent
